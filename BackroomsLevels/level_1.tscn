@@ -1,0 +1,108 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Models/backrooms_liminal_space/Level1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/backrooms/level_1.gd" type="Script" id=3]
+[ext_resource path="res://Shaders/outline.tres" type="Shader" id=4]
+
+[sub_resource type="OpenSimplexNoise" id=6]
+seed = 69420
+octaves = 9
+period = 256.0
+persistence = 1.0
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=7]
+width = 1000
+height = 1000
+seamless = true
+noise = SubResource( 6 )
+
+[sub_resource type="PanoramaSky" id=8]
+panorama = SubResource( 7 )
+
+[sub_resource type="Environment" id=1]
+background_mode = 2
+background_sky = SubResource( 8 )
+background_color = Color( 1, 1, 1, 1 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+fog_enabled = true
+fog_color = Color( 0, 0, 0, 1 )
+fog_sun_color = Color( 1, 1, 1, 1 )
+fog_depth_begin = 0.0
+fog_depth_end = 67.2
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 4 )
+shader_param/_thickness = 1
+shader_param/_detail = 78.507
+
+[sub_resource type="QuadMesh" id=5]
+size = Vector2( 2, 2 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 865.877, 1, 517.996 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CapsuleMesh" id=11]
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0.321569, 0.72549, 1, 1 )
+
+[sub_resource type="CapsuleMesh" id=13]
+radius = 0.3
+mid_height = 0.8
+
+[node name="Level1" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="OutlineShader" type="MeshInstance" parent="."]
+material_override = SubResource( 4 )
+extra_cull_margin = 16384.0
+mesh = SubResource( 5 )
+
+[node name="Level1" parent="." instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.87709, 0 )
+
+[node name="Welcome" type="Label3D" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, -0.307252, 2.73534, -4.98542 )
+billboard = 2
+text = "Welcome to Level 1!"
+
+[node name="What" type="Label3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80.003, 0, 0 )
+pixel_size = 0.05
+billboard = 1
+no_depth_test = true
+render_priority = 69
+text = "default text
+"
+
+[node name="WarpyWarp" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="WarpyWarp"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -99.4126, 0 )
+shape = SubResource( 9 )
+
+[node name="Amogus" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 79.878, 1.41869, -0.25206 )
+
+[node name="Body" type="MeshInstance" parent="Amogus"]
+transform = Transform( 1, 0, 0, 0, -0.0193022, -0.999814, 0, 0.999814, -0.0193022, 0, 0, 0 )
+material_override = SubResource( 10 )
+mesh = SubResource( 11 )
+
+[node name="Visor" type="MeshInstance" parent="Amogus"]
+transform = Transform( -0.000331565, 0, -1, 0, 1, 0, 1, 0, -0.000331565, 0, 0.662062, -0.854836 )
+material_override = SubResource( 12 )
+mesh = SubResource( 13 )
+
+[connection signal="body_entered" from="WarpyWarp" to="." method="_on_WarpyWarp_body_entered"]

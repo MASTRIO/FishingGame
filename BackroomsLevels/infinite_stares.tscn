@@ -1,0 +1,222 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Models/liminal_stairs/scene.gltf" type="PackedScene" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/backrooms/infinite_stares.gd" type="Script" id=3]
+[ext_resource path="res://Shaders/outline.tres" type="Shader" id=4]
+
+[sub_resource type="Environment" id=5]
+background_mode = 1
+glow_enabled = true
+glow_bloom = 1.0
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 4 )
+shader_param/_thickness = 1
+shader_param/_detail = 78.507
+
+[sub_resource type="QuadMesh" id=7]
+size = Vector2( 2, 2 )
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.65035, 0.139703, 3.73144 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 3.987, 0.217573, 1.40151 )
+
+[sub_resource type="CylinderShape" id=3]
+height = 45.7448
+radius = 1.40981
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 676.283, 6.16132, 614.395 )
+
+[node name="InfiniteStairs" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 5 )
+
+[node name="OutlineShader" type="MeshInstance" parent="."]
+material_override = SubResource( 6 )
+extra_cull_margin = 16384.0
+mesh = SubResource( 7 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.879312, 0.376354, -0.291835, -0.431914, -0.372023, 0.821614, 0.200649, 0.848503, 0.489677, -25.3556, 21.704, 0 )
+
+[node name="Stairs" type="Spatial" parent="."]
+
+[node name="StairGroup1" type="Spatial" parent="Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -48.325, 0 )
+
+[node name="Stairs1" parent="Stairs/StairGroup1" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+
+[node name="Stairs5" parent="Stairs/StairGroup1" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -19.3705, 0 )
+
+[node name="Stairs6" parent="Stairs/StairGroup1" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -38.5446, 0 )
+
+[node name="Stairs7" parent="Stairs/StairGroup1" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -58.046, 0 )
+
+[node name="Stairs8" parent="Stairs/StairGroup1" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -77.1547, 0 )
+
+[node name="Stairs9" parent="Stairs/StairGroup1" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -96.198, 0 )
+
+[node name="Stairs2" parent="Stairs/StairGroup1" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 19.7079, 0 )
+
+[node name="Stairs3" parent="Stairs/StairGroup1" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 38.9475, 0 )
+
+[node name="Stairs4" parent="Stairs/StairGroup1" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 58.6452, 0 )
+
+[node name="StairGroup2" type="Spatial" parent="Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -222.117, 0 )
+
+[node name="Stairs1" parent="Stairs/StairGroup2" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+
+[node name="Stairs5" parent="Stairs/StairGroup2" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -19.3705, 0 )
+
+[node name="Stairs6" parent="Stairs/StairGroup2" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -38.5446, 0 )
+
+[node name="Stairs7" parent="Stairs/StairGroup2" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -58.046, 0 )
+
+[node name="Stairs8" parent="Stairs/StairGroup2" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -77.1547, 0 )
+
+[node name="Stairs9" parent="Stairs/StairGroup2" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -96.198, 0 )
+
+[node name="Stairs2" parent="Stairs/StairGroup2" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 19.7079, 0 )
+
+[node name="Stairs3" parent="Stairs/StairGroup2" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 38.9475, 0 )
+
+[node name="Stairs4" parent="Stairs/StairGroup2" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 58.6452, 0 )
+
+[node name="StairGroup3" type="Spatial" parent="Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -392.211, 0 )
+
+[node name="Stairs1" parent="Stairs/StairGroup3" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+
+[node name="Stairs5" parent="Stairs/StairGroup3" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -19.3705, 0 )
+
+[node name="Stairs6" parent="Stairs/StairGroup3" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -38.5446, 0 )
+
+[node name="Stairs7" parent="Stairs/StairGroup3" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -58.046, 0 )
+
+[node name="Stairs8" parent="Stairs/StairGroup3" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -77.1547, 0 )
+
+[node name="Stairs9" parent="Stairs/StairGroup3" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -96.198, 0 )
+
+[node name="Stairs2" parent="Stairs/StairGroup3" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 19.7079, 0 )
+
+[node name="Stairs3" parent="Stairs/StairGroup3" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 38.9475, 0 )
+
+[node name="Stairs4" parent="Stairs/StairGroup3" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 58.6452, 0 )
+
+[node name="StairGroup4" type="Spatial" parent="Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -559.254, 0 )
+
+[node name="Stairs1" parent="Stairs/StairGroup4" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+
+[node name="Stairs5" parent="Stairs/StairGroup4" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -19.3705, 0 )
+
+[node name="Stairs6" parent="Stairs/StairGroup4" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -38.5446, 0 )
+
+[node name="Stairs7" parent="Stairs/StairGroup4" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -58.046, 0 )
+
+[node name="Stairs8" parent="Stairs/StairGroup4" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -77.1547, 0 )
+
+[node name="Stairs9" parent="Stairs/StairGroup4" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -96.198, 0 )
+
+[node name="Stairs2" parent="Stairs/StairGroup4" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 19.7079, 0 )
+
+[node name="Stairs3" parent="Stairs/StairGroup4" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 38.9475, 0 )
+
+[node name="Stairs4" parent="Stairs/StairGroup4" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 58.6452, 0 )
+
+[node name="StairGroup5" type="Spatial" parent="Stairs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -722.483, 0 )
+
+[node name="Stairs1" parent="Stairs/StairGroup5" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+
+[node name="Stairs5" parent="Stairs/StairGroup5" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -19.3705, 0 )
+
+[node name="Stairs6" parent="Stairs/StairGroup5" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -38.5446, 0 )
+
+[node name="Stairs7" parent="Stairs/StairGroup5" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -58.046, 0 )
+
+[node name="Stairs8" parent="Stairs/StairGroup5" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -77.1547, 0 )
+
+[node name="Stairs9" parent="Stairs/StairGroup5" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -96.198, 0 )
+
+[node name="Stairs2" parent="Stairs/StairGroup5" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 19.7079, 0 )
+
+[node name="Stairs3" parent="Stairs/StairGroup5" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 38.9475, 0 )
+
+[node name="Stairs4" parent="Stairs/StairGroup5" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 58.6452, 0 )
+
+[node name="Collision" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Collision"]
+transform = Transform( 0.261449, -0.247535, -0.932937, -0.0596211, 0.960569, -0.271575, 0.963374, 0.126626, 0.236382, 0.234302, 3.81988, -1.9823 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Collision"]
+transform = Transform( 0.846978, -0.445687, -0.289811, 0.405864, 0.894182, -0.188976, 0.343369, 0.0424348, 0.938242, 1.72828, 4.1462, -0.988887 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Collision"]
+shape = SubResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79797, 6.43363, -1.70776 )
+
+[node name="WarpyNess" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="WarpyNess"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -793.263, 0 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="WarpyNess" to="." method="_on_WarpyNess_body_entered"]

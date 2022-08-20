@@ -1,0 +1,11 @@
+Model Information:
+* title:	Backrooms liminal space
+* source:	https://sketchfab.com/3d-models/backrooms-liminal-space-18a43567ecd74a1ca5ee5cf7165ced2f
+* author:	Entity (https://sketchfab.com/studenov.ivan020312)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Backrooms liminal space" (https://sketchfab.com/3d-models/backrooms-liminal-space-18a43567ecd74a1ca5ee5cf7165ced2f) by Entity (https://sketchfab.com/studenov.ivan020312) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
