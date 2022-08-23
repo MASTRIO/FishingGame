@@ -55,7 +55,11 @@ func _physics_process(delta):
 	if Input.is_action_pressed("fish"):
 		launch_power += POWER_INCREASE
 	
-	velocity.y += gravity * delta
+	if Input.is_action_pressed("slam"):
+		velocity.y += -1000 * delta
+	else:
+		velocity.y += gravity * delta
+	
 	var desired_velocity = get_input() * current_move_speed
 	
 	velocity.x = desired_velocity.x

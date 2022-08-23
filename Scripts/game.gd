@@ -2,6 +2,7 @@ extends Spatial
 
 onready var fishing_line = $FishingLine
 onready var hook_display = $HookDisplay
+onready var animation_player = $AnimationPlayer
 
 var fish_caught = 0
 var cash_money = 0
@@ -80,3 +81,7 @@ func _on_BackroomsWarp_body_entered(body):
 	if body.is_in_group("Player"):
 		SceneManager.change_scene(Global.LEVELS[1])
 		#get_tree().change_scene_to(Global.LEVELS[1])
+
+func _on_TheEye_eye_seen():
+	animation_player.play("WrathOfTheEye")
+	print("b")

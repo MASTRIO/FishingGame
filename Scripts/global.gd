@@ -6,3 +6,5 @@ const LEVELS = [
 	preload("res://BackroomsLevels/level_1.tscn"),
 	preload("res://BackroomsLevels/infinite_stares.tscn")
 ]
+
+var has_been_to_the_stairs = false

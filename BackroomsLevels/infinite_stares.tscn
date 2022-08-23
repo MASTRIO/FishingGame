@@ -43,7 +43,7 @@ extra_cull_margin = 16384.0
 mesh = SubResource( 7 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.879312, 0.376354, -0.291835, -0.431914, -0.372023, 0.821614, 0.200649, 0.848503, 0.489677, -25.3556, 21.704, 0 )
+transform = Transform( 0.00295696, -0.911546, -0.411189, -0.431914, -0.372023, 0.821614, -0.90191, 0.175169, -0.394809, -25.3556, 21.704, 0 )
 
 [node name="Stairs" type="Spatial" parent="."]
 
@@ -211,7 +211,7 @@ shape = SubResource( 2 )
 shape = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79797, 6.43363, -1.70776 )
+transform = Transform( -0.75671, 0, -0.653751, 0, 1, 0, 0.653751, 0, -0.75671, -1.79797, 6.43363, -1.70776 )
 
 [node name="WarpyNess" type="Area" parent="."]
 
